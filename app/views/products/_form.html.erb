@@ -31,7 +31,13 @@
     <%= form.text_field :price %>
   </div>
 
-  <div class="actions">
-    <%= form.submit "Crear Producto" %>
+  <% if current_page?(new_product_path) %>
+    <div class="actions">
+      <%= form.submit "Crear Producto" %>
+    </div>
+  <% else %>
+    <div class="actions">
+    <%= form.submit "Editar Producto" %>
   </div>
+  <% end %>
 <% end %>
